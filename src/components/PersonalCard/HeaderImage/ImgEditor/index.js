@@ -71,20 +71,15 @@ export default function ImgEditor({ closedComponent }) {
     <div className={classes.modal}  >
       <div  className={classes.root}>
         <Typography gutterBottom variant="h4" component="h2"  >
-        Información Personal
-        </Typography>
-        <Typography variant="body2" color="textSecondary" component="p"  >
-        Recuerda llenar todos los campos si no los cambios no se podran guardar
+          Imagen de Fondo
         </Typography>
         <Divider/>
-
         <form onSubmit={submit}>
           <TextField
             value={query}
             onChange={({target})=>setQuery(target.value)}
             fullWidth
-            label='Nombre de usuario'
-            id="name"
+            label='Busca una imagen '
             InputProps={{
               startAdornment: (
                 <InputAdornment position="start">

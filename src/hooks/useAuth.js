@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react'
 import { useDispatch } from 'react-redux'
-import { userLogin, userLogout } from 'reducer/actions'
 import { useHistory } from 'react-router-dom'
-import  { userAuth } from 'firebase/firebaseConfig'
+import { userLogin, userLogout } from 'statusManagement/reducer/actions'
+import  { userAuth } from 'statusManagement/firebase'
 
 
 
@@ -24,12 +24,12 @@ const useAuth = () => {
       }
     })
     return () => unregisterAuthObserver()
-  }, [])
+  },[history])
     
   useEffect(() => {
     isLoggedIn && dispatch(userLogin()) 
     setChecking(false)
-  }, [isLoggedIn])
+  }, [isLoggedIn,dispatch])
 
   const logout = () => {
     dispatch(userLogout())

@@ -1,7 +1,8 @@
 /* eslint-disable react/prop-types */
 import { useState } from 'react'
 import { makeStyles } from '@material-ui/core/styles'
-import { Paper, 
+import {
+  Paper, 
   Chip,
   ButtonGroup, 
   Button, 
@@ -10,14 +11,11 @@ import { Paper,
   InputAdornment,
   ListItem,
   List
-
 } from '@material-ui/core'
-
 import CreateIcon from '@material-ui/icons/Create'
 import {  useDispatch } from 'react-redux'
 import useSkills from 'hooks/useSkills'
-import { addNewStack } from 'reducer/actions'
-
+import { addNewStack } from 'statusManagement/reducer/actions'
 
 const useStyles = makeStyles((theme) => ({
 

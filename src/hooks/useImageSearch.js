@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { getPhotes } from 'unplash/initConfig'
+import { getPhotes } from 'statusManagement/unplash'
 
 const useImageSearch = () => {
   const [ images, setImages ] = useState(null)
@@ -12,7 +12,7 @@ const useImageSearch = () => {
           setImages(res)
         })
     }
-  }, [])
+  }, [query])
 
   const searchImg = () =>{
     if( query && query.length >0 ){

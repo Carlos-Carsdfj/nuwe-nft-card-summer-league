@@ -7,8 +7,8 @@ import {
   getUser,
   logout,
   addNewsCards
-} from 'firebase/firebaseConfig'
-import { removeSkillDuplicate } from 'constSetting'
+} from 'statusManagement/firebase'
+import { removeSkillDuplicate } from 'consts'
 
 /*************************** */
 /**                          */

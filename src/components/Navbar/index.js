@@ -58,7 +58,7 @@ export default function Navbar({uid , window, isLoggedIn, logout}) {
   const drawer = (
     <div>
       <div className={classes.toolbar} >
-        <img src={logoNuwe} style={{width:'100%', maxWidth:'160px', margin:'auto'}} className={classes.imgLogo} />
+        <img src={logoNuwe} style={{width:'100%', maxWidth:'160px', margin:'auto'}} className={classes.imgLogo} alt='Nuwe Logo' />
       </div>
       <Divider />
       <List>

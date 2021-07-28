@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { removeSkillDuplicate, SKILLS_PACKS } from 'constSetting'
+import { removeSkillDuplicate, SKILLS_PACKS } from 'consts'
 
 const useSkills = ( initialSkill = []) => {
   const [ skills, setSkills ] = useState([])
@@ -7,9 +7,8 @@ const useSkills = ( initialSkill = []) => {
   const [ selectedSkills, setSelectedSkills ] = useState(initialSkill)
 
   useEffect(() => {
-    const tempFilter = SKILLS_PACKS.filter(skill => skill.name.
-      toLowerCase().
-      includes(textFilter.toLowerCase()))
+    const tempFilter = SKILLS_PACKS.filter(skill => skill.name.toLowerCase()
+      .includes(textFilter.toLowerCase()))
     const foundSkills = (textFilter.length > 0) 
       ? tempFilter
       : SKILLS_PACKS
@@ -22,7 +21,7 @@ const useSkills = ( initialSkill = []) => {
         return skill.name
       }))
     }
-  }, [])
+  }, [initialSkill])
 
   const searchSkills = (search) =>{
     setTextFilter(search)
