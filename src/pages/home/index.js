@@ -1,13 +1,6 @@
 export default function Home(){
   
-
-  return({
-    <h2>
-      Hola Home
-    </h2>  
-
-    })
-
+  return(
+    <h1>Home</h1>
+  )
 }
-
-

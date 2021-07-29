@@ -1,35 +1,31 @@
 import { Switch, Route } from 'react-router-dom'
 import { makeStyles } from '@material-ui/core'
-import Private  from 'routes/private'
-import Login from  'pages/login'
-import Profile from 'pages/profile'
-import Users from 'pages/userList'
+import User from 'pages/profile'
+import Home from 'pages/home'
 
 const useStyles = makeStyles((theme) => ({
-      content: {
-        flexGrow: 1,
-        padding: theme.spacing(3),
-      },
-    })
+  content: {
+    minHeight:'100vh',
+    flexGrow: 1,
+    padding: theme.spacing(3),
+  },
+})
 )
 
-function App({  isLoggedIn  }) {
+function Public() {
   const classes = useStyles()
   return (
     <main className={classes.content}>
       <Switch>
-        <Private path='/users' isLoggedIn={isLoggedIn}>
-          <Users/>
-        </Private>
-        <Private path='/profile/:uid' isLoggedIn={isLoggedIn}>
-          <Profile/>
-        </Private>
-        <Route path='/login'>
-          <Login/>
+        <Route path='/user/:name'>
+          <User />
+        </Route>
+        <Route path='/'>
+          <Home/> 
         </Route>
       </Switch>
     </main>  
-    )
+  )
 }
 
-export default App
+export default Public
