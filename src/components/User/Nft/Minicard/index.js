@@ -118,6 +118,7 @@ export default function Minicard(){
 
   return(
     <Card className={classes.card} 
+
     >
       <Typography  variant='body2' component='h4' className={classes.title}
       > 
