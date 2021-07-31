@@ -175,7 +175,7 @@ en el estado.
 Aqui guardamos por separado toda ruta publica o privada de la app,
 unicamente tenemos una ruta objetiva que es la del usuario y no utilizamos 
 autentificación por lo que solo estamos usando la carpeta **Public**
-aqui va todo lo que se renderizara en la ruta //user//[nameUser]
+aqui va las paginas  que se renderizara en la ruta  **"/user/[nameUser]"**  y **"/"**
 
 
 
@@ -192,6 +192,72 @@ Como estamos usando **Material-ui**  aqui configuramos  la paleta de colores
  de la app por **ThemeProvider** de Material-ui
 
 
+### Pages
+
+```
+│   ├── pages
+│   │   ├── home
+│   │   │   └── index.js
+│   │   └── profile
+│   │       └── index.js
+```
+
+Aqui se centraran todos los componentes y view que se renderizaran  
+
+
+
+### Assets
+
+```
+│   ├── assets
+│   │   └── images
+│   │       ├── avatar_me.svg
+│   │       ├── avatarMe.svg
+│   │       ├── Frame 2 1.svg
+│   │       ├── icons
+│   │       │   ├── Edit.svg
+│   │       │   ├── Home.svg
+│   │       │   ├── Nuwe_Letters.png
+│   │       │   ├── Nuwe_Mono.svg
+│   │       │   ├── Profile.svg
+│   │       │   └── Setting.svg
+│   │       └── symbol.svg
+```
+Todo material estatico como imagenes e iconos usados por la app se encuentran aqui .
+
+
+
+
+
+### Components 
+```
+│   ├── components
+│   │   ├── Navbar
+│   │   │   └── index.js
+│   │   └── User
+│   │       ├── Nft
+│   │       │   ├── Card
+│   │       │   │   └── index.js
+│   │       │   ├── EditAvatar
+│   │       │   │   └── index.js
+│   │       │   ├── index.js
+│   │       │   ├── Minicard
+│   │       │   │   └── index.js
+│   │       │   ├── QrCard
+│   │       │   │   └── index.js
+│   │       │   └── Radar
+│   │       │       └── index.js
+│   │       └── Normal
+│   │           └── index.js
+```
+Los Componentes estan todos agrupados en esta carpeta podemos ver los siguientes:
+
+
+* **NavBar**:
+    ```
+     ├── Navbar
+     └── index.js
+    ```
 
 
 
