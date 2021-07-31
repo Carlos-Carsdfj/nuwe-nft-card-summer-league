@@ -254,12 +254,17 @@ Los Componentes estan todos agrupados en esta carpeta podemos ver los siguientes
 
 
 * **NavBar**:
-* 
-    ```
-     ├── Navbar
-          └── index.js
-          
-    ```
+  El pilar de este componente son  **Drawer** y **Hidden** los cuales permiten mostrar el menu convencional 
+  o el menu que sale de un un costado de la pantalla al presionar el tipico menu hamburguesa ( **Drawer  permanent** y **Drawer temporary**  ) dependiendo de la resolución del que se ve la  app el Hidden oculta estos componentes y el **appBar** permanece **display='none'** siempre que la resolución sea mayor al **breakpoint ms** ( opción accesible de forma facil y con medidas persistene  por Material-ui, se puede modificar los valores por defecto )
+  
+  
+  
+ * **User**
+   Contiene las dos vistas la de nft y la normal la que seria el perfil del usuario  en este reto no necesitabamos de este ultimo por lo que solo se coloco un boton para poder cambiar la vista al nft 
+   
+   
+   
+  
 
 
 
