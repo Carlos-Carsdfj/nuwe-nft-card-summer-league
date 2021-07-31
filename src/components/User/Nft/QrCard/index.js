@@ -11,13 +11,16 @@ import {
   CardActionArea
 }  from '@material-ui/core'
 import Robohash from 'react-robohash'
+
+import  QRCode from 'react-qr-code'
 import { useSelector } from 'react-redux'
+import { useTheme } from '@material-ui/core/styles'
 import symbolImg from 'assets/images/symbol.svg' 
-import Radar from '../Radar'
 
 const useStyles = makeStyles((theme)=>({
   card:{
     maxWidth:500,
+    minWidth:330,
     minHeight:600,
     color:theme.palette.secondary.main,
     border:`10px solid ${theme.palette.primary.main}`,
@@ -42,6 +45,12 @@ const useStyles = makeStyles((theme)=>({
   titles:{
     display:'flex',
     flexDirection:'column',
+  },
+  qrCode:{
+    display:'flex',
+    flexDirection:'column',
+    justifyContent:'center',
+    alignItems:'center'
   },
   boldText:{
     fontWeight:900,
@@ -86,15 +95,20 @@ const SmallAvatar = withStyles(() => ({
 
 
 
-export default function CardNft({ toggle }){
+export default function QrCard({toggle}){
   
+ 
+  const theme = useTheme()
   const state = useSelector(state => state)
   const classes = useStyles()
   
+  const urlLocation = window.location.href
+  
   return(
     <Card className={classes.card} 
+      
     >
-      <CardActionArea onClick={toggle}>
+      <CardActionArea onClick={toggle} height='100%' >
         <CardContent className={classes.card_content} >
           <Badge
             overlap="circular"
@@ -141,41 +155,12 @@ export default function CardNft({ toggle }){
             </Typography>
           </Box>
         </CardContent>
-        <CardContent className={classes.radarContent}  >
-          <Radar data={state.stack_stop} name='stack'color='#569B51' />
-        </CardContent>
-        {/* <CardContent className={classes.radarContent}  >
-          <Radar data={soft} name='soft' color='#F29C1B' />
-        </CardContent>*/ }
         <Divider variant="middle" className={classes.divisor} />
-        <Divider variant="middle" className={classes.divisor} />
-        <CardContent className={classes.partiContent}>
-          <Box className={classes.listContent} >
-            <Typography variant='body2'component='h4'  >
-              participacion de {state.name}
-            </Typography>
-            {state.participation.map(item=>{
-              return(
-                <Box className={classes.textList} key={item.id} >
-                  <Typography variant='body2' component='p' >
-                    {item.title}
-                  </Typography>
-                  <Typography variant='body2' component='p' className={classes.boldText} >
-                    {item.p}
-                  </Typography>
-                </Box>
-              )
-            })
-            }
-          </Box>
-          <Box display='flex' flexDirection='column' alignItems='center' >
-            <Typography variant='body2' component='h4' >
-                Posición global
-            </Typography>      
-            <Typography variant='h2' component='p' className={classes.boldText} >
-              {state.global_position}
-            </Typography>      
-          </Box>
+        <CardContent className={classes.qrCode}>
+          <QRCode value={urlLocation} size={200}
+            fgColor={theme.palette.background.darck} 
+            bgColor={theme.palette.secondary.main} level='H'
+          />
         </CardContent>
       </CardActionArea>
     </Card>

@@ -1,15 +1,17 @@
 //import { makeStyles } from '@material-ui/core/styles'
 import { 
   Card, 
-  //CardContent, 
   Avatar, 
   makeStyles, 
-  //Box, 
+  Modal, 
   Typography, 
   Badge, 
   withStyles,
 }  from '@material-ui/core'
-import avatarImg from 'assets/images/avatarMe.svg'
+import { useSelector } from 'react-redux'
+import Robohash from 'react-robohash'
+import { useState } from 'react'
+import { EditAvatar } from '../EditAvatar'
 import symbolImg from 'assets/images/symbol.svg' 
 
 const useStyles = makeStyles((theme)=>({
@@ -22,15 +24,22 @@ const useStyles = makeStyles((theme)=>({
     borderRadius:10,
     position:'relative'
   },
+  modal:{
+    display:'flex',
+    justifyContent:'center',
+    alignItems:'center',
+  },
   avatar2:{
-  
-
+    left:'-50px',
     bottom:'-10px',
+    '&:hover':{
+      cursor:'pointer'
+    } 
   },
   avatar:{
-    width:'auto',
-    height:191,
-   
+    width:'100%',
+    height:'100%',
+    background:'transparent'
   },
   card_content:{
     display:'flex',
@@ -67,6 +76,10 @@ const useStyles = makeStyles((theme)=>({
     padding:0,
     color:theme.palette.primary.main
   },
+  imgAv:{
+    height:'auto',
+    width:'100%'
+  },
   listContent:{
     display:'flex',
     flexDirection:'column',
@@ -95,22 +108,28 @@ const SmallAvatar = withStyles(() => ({
 
 export default function Minicard(){
   
+  const state = useSelector(state=>state)
+  const  [ isVisible, setIsVisible ]= useState(false)
   const classes = useStyles()
-  
+  const toggle = ()=>{
+    setIsVisible(prev =>!prev)
+  }
+
+
   return(
     <Card className={classes.card} 
     >
       <Typography  variant='body2' component='h4' className={classes.title}
       > 
-        @edgar.gago
+        { state.name }
       </Typography>
       <Typography  variant='body2' component='h4' className={classes.title}
       > 
-      Web dev|Creator||
+        {state.title}|{state.rank}
       </Typography>
       <Typography  variant='h2' component='p' className={classes.numberInfo} 
       > 
-      45
+        {state.global_position}
       </Typography>      
       <Badge className={classes.avatar2 }
         overlap="circular"
@@ -119,10 +138,22 @@ export default function Minicard(){
           horizontal: 'right'  
         }}
         badgeContent={<SmallAvatar alr="symbol of user " src={symbolImg} /> }
+        onClick={toggle}
       >
-        <Avatar src={avatarImg} alt='avatar of me' variant='square' className={classes.avatar} >
+        <Avatar  alt='avatar of me' variant='square' className={classes.avatar} >
+          <Robohash className={classes.imgAv} 
+            name={state.avatar}
+            type='cat'
+          />
         </Avatar>
       </Badge>
+      <Modal
+        className={classes.modal}
+        open={isVisible}
+        onClose={toggle}
+      >
+        {EditAvatar({toggle:toggle})}
+      </Modal>
     </Card>
   ) 
 }
