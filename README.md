@@ -52,7 +52,8 @@ del diseño de interfaz de usuario así como algunos otros componentes que facil
 
    * **React-robohash**:Se encarga de recibir una imagen (Avatar) generado de forma automatica por la api proporcionado por [robohash](https://robohash.org)      
  
-
+   * **React-card-flip**: Nos da el maravilloso efecto de flip de un componente en react 
+   *  **Recharts**: libreria que nos da una serie de componentes para crear graficas  en svg (por lo que son facilmente ajustables a todo tamaño)  
     
     
  
