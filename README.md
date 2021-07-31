@@ -254,9 +254,11 @@ Los Componentes estan todos agrupados en esta carpeta podemos ver los siguientes
 
 
 * **NavBar**:
+* 
     ```
      ├── Navbar
           └── index.js
+          
     ```
 
 
