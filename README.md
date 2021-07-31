@@ -267,7 +267,7 @@ Los Componentes estan todos agrupados en esta carpeta podemos ver los siguientes
     Organiza  y agrupa los componentes  Minicard, QrCard y Card y proporciona el boton para regresar a la vista del perfil 
     
  * **Card**:
-    Carta del nft principal contiene informacion del perfil en una comoda vista agrupados y con un avatar , la carta esta envuelta por la **Card** componente dado por  **Material-ui** luego tiene la **ActionCardArea**  que nos da el efecto al presionar para dar el flip a la tarjeta y ver la informacion de la parte trasera con el codigo Qr 
+    Carta del nft principal contiene informacion del perfil en una comoda vista agrupados y con un avatar , la carta esta envuelta por la **Card** componente dado por  **Material-ui** luego tiene la **ActionCardArea**  que nos da el efecto al presionar para dar el flip a la tarjeta y ver la informacion de la parte trasera con el codigo Qr , la información la tenemos cubierta por varias **CardContent** componentes especiales que sirve para ubicar de una mejor forma las secciónes de la **Card**  tenemos el **Radar** que  muestra la información del top en habilidades en una grafica tipo radar y un **Avatar** component nos proporciona una imagen manejable y con propiedaes modificables mas convenientes que la tipica img. el componente **Badge** renderiza una pequeña imagen circular a un lado del componente que se le pasa como hijo , este componente tambien acepta un **Avatar** como imagen a renderizar en miniatura    
    
    
   
