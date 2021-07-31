@@ -48,7 +48,12 @@ del diseño de interfaz de usuario así como algunos otros componentes que facil
    * **React-router-dom**: Colección de componentes de navegación para usar en Reac, con esta librería
           podemos obtener un enrutamiento dinámico es la magia por así decirlo que nos permite también renderizar componentes mediante rutas        
  
+   * **React-qr-code**: Nos prevee de un componente que genera codigo QR con un valor previamente indicado.
 
+   * **React-robohash**:Se encarga de recibir una imagen (Avatar) generado de forma automatica por la api proporcionado por [robohash](https://robohash.org)      
+ 
+
+    
     
  
 
@@ -132,6 +137,60 @@ del diseño de interfaz de usuario así como algunos otros componentes que facil
 └── yarn.lock
 ```
 
+## Sobre la solución 
+
+Como en este desafio no se necesitaba del perfil  completo del usuario ni la interacción con la información del 
+usuario se optó por crearlo separado aplicacando  solo las soluciónes solicitadas.
+
+
+
+
+
+### StatusManagement 
+
+```
+│   ├── statusManagement
+│   │   └── reducer
+│   │       ├── action
+│   │       │   └── index.js
+│   │       ├── reducer.js
+│   │       ├── store.js
+│   │       └── type.js
+```
+En esta sección se enceuntra cualquier componente del que controle o cambie el estado 
+podemos conseguir reducer el cual en este proyecto unicamente lo usamos para guardar toda la información del usuario de ejemplo 
+la unica acción que tenemos en la app es la de cambiar la imagen del avatar para poder simular el poder cambaiar y guardar dicha imagen 
+en el estado.
+
+
+### Routes
+```
+│   ├── routes
+│   │   ├── private
+│   │   │   └── index.js
+│   │   └── public
+│   │       └── index.js
+```
+
+Aqui guardamos por separado toda ruta publica o privada de la app,
+unicamente tenemos una ruta objetiva que es la del usuario y no utilizamos 
+autentificación por lo que solo estamos usando la carpeta **Public**
+aqui va todo lo que se renderizara en la ruta //user//[nameUser]
+
+
+
+### Styles
+```
+│   ├── styles
+│   │   └── global.js
+```
+
+Todo estilo global que se use en la app va aqui .
+
+Como estamos usando **Material-ui**  aqui configuramos  la paleta de colores 
+ con **createTheme** y lo exportamos para ser usado en el index.js principal 
+ de la app por **ThemeProvider** de Material-ui
+
 
 
 
@@ -139,7 +198,7 @@ del diseño de interfaz de usuario así como algunos otros componentes que facil
 
  ## Calidad del codigo
 ### [CodeFactor](https://www.codefactor.io/repository/github/carlos-carsdfj/nuwe-nft-card-summer-league)
-  <img src="https://firebasestorage.googleapis.com/v0/b/first-challenge-nuwe.appspot.com/o/readmeImagenes%2Fcodefactor.png?alt=media&token=aabf4c90-d0b7-4107-9448-2b85581e47e0" width="80%" height="auto" />
+
   
   
 
