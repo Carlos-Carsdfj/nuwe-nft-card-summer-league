@@ -134,17 +134,17 @@ del diseño de interfaz de usuario así como algunos otros componentes que facil
 
 
 
- <img src="https://firebasestorage.googleapis.com/v0/b/first-challenge-nuwe.appspot.com/o/readmeImagenes%2Fbuscar.svg?alt=media&token=9129a939-ecd5-4e3a-bfa7-ec8d028598dd" width="200" height="200" />
+
 
 
  ## Calidad del codigo
-### [CodeFactor](https://www.codefactor.io/repository/github/carlos-carsdfj/nuwe-profiles-summer-league/stats)
+### [CodeFactor](https://www.codefactor.io/repository/github/carlos-carsdfj/nuwe-nft-card-summer-league)
   <img src="https://firebasestorage.googleapis.com/v0/b/first-challenge-nuwe.appspot.com/o/readmeImagenes%2Fcodefactor.png?alt=media&token=aabf4c90-d0b7-4107-9448-2b85581e47e0" width="80%" height="auto" />
   
   
 
 
-### [Sonarcloud](https://sonarcloud.io/dashboard?id=Carlos-Carsdfj_nuwe-profiles-summer-league)
+### [Sonarcloud](https://sonarcloud.io/dashboard?id=Carlos-Carsdfj_nuwe-nft-card-summer-league)
 
 
 
