@@ -271,9 +271,15 @@ Los Componentes estan todos agrupados en esta carpeta podemos ver los siguientes
     Carta del nft principal contiene informacion del perfil en una comoda vista agrupados y con un avatar , la carta esta envuelta por la **Card** componente dado por  **Material-ui** luego tiene la **ActionCardArea**  que nos da el efecto al presionar para dar el flip a la tarjeta y ver la informacion de la parte trasera con el codigo Qr , la información la tenemos cubierta por varias **CardContent** componentes especiales que sirve para ubicar de una mejor forma las secciónes de la **Card**  tenemos el **Radar** que  muestra la información del top en habilidades en una grafica tipo radar y un **Avatar** component nos proporciona una imagen manejable y con propiedaes modificables mas convenientes que la tipica img. el componente **Badge** renderiza una pequeña imagen circular a un lado del componente que se le pasa como hijo , este componente tambien acepta un **Avatar** como imagen a renderizar en miniatura    
    
    
-  
+ * **Minicard**: Mini tarjeta que visualiza  el avatar y el titulo del usuario aqui al  avatar se le da el control de abrir un modal para modificar la imagen de perfil **EditAvatar** cuando se da el click en el,  
 
 
+ * **EditAvatar**:  Aqui se le mostrara al usuario la imagen actual del avatar  obtenido del estado  actual (redux state) tambien se le da la opcion de salir sin guardar cambios, de guardar cambios y el de proporcionar una imagen aleatorio , la imagen se obtiene de robohash el mismo proporciona una imagen que varia dependiento del los caracteres que le des de valor al componente  **Robothash** dado de **react-robohash**  , muy pocas veces obtendras una imagen identica colocandole caracteres diferentes de valor.
+
+ * **Radar**: No es muy complicado  , contiene un conjunto de componentes dados por **Rechats** para configurar una grafica 
+    con los datos dados , la parte mas importante es la estructura de la data y sus valores que deben concidir con el nombre dado al campo dataKey del 
+    **Radar**  el **PolarAngleAxis** mostrara el label corresponiente para identificar cada valor el dataKey de este debe concidir en nombre con el dado en la estructura de data. se puede modificar los colores de del radar con stroke y fill al ser este un componente que returna un svg con sus prop dadas. 
+    
 
 
  ## Calidad del codigo
