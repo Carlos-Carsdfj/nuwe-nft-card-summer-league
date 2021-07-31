@@ -1,7 +1,9 @@
 /* eslint-disable react/prop-types */
 import { useState } from 'react'
 import { useHistory } from 'react-router-dom'
-import { 
+import {
+  AppBar,
+  Toolbar,
   ListItem,
   ListItemIcon,
   ListItemText,
@@ -12,8 +14,11 @@ import {
   Hidden,
   useTheme,
   Typography,
-  Box
+  Box,
+  CssBaseline,
 }from '@material-ui/core'
+import IconButton from '@material-ui/core/IconButton'
+import MenuIcon from '@material-ui/icons/Menu'
 import logoNuwe from 'assets/images/icons/Nuwe_Mono.svg'
 import lettersNuwe from 'assets/images/icons/Nuwe_Letters.png'
 import PanelIcon from 'assets/images/icons/Home.svg'
@@ -25,6 +30,7 @@ const useStyles = makeStyles((theme) => ({
   textAlign:'center',
   drawerPaper: {
     width: drawerWidth,
+    zIndex:50
   },
   imgLetters:{
     height:'auto',
@@ -49,11 +55,23 @@ const useStyles = makeStyles((theme) => ({
       flexShrink: 0,
       zIndex:50
     },
-   
-    colorTheme:{
-      color:'blue',
+  }, 
+  colorTheme:{
+    color:'blue',
+  },
+  appBar: {
+    backgroundColor:theme.palette.background.main,
+    [theme.breakpoints.up('sm')]: {
+      display:'none'
     },
   },
+  menuButton: {
+    marginRight: theme.spacing(2),
+    [theme.breakpoints.up('sm')]: {
+      display: 'none',
+    },
+  },
+ 
 }))
 
 
@@ -64,8 +82,12 @@ export default function Navbar({window}) {
   const theme = useTheme()
   const classes = useStyles()
   const history = useHistory()
+  
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen)
+  }
+  const handlerClosedDrawer =()=>{
+    setMobileOpen(false)
   }
   const drawer = (
     <div>
@@ -78,7 +100,12 @@ export default function Navbar({window}) {
       <Divider />
 
       <List>
-        <ListItem button onClick={() => history.push('/user/carlosCarsd')} className={classes.colorTheme}  >
+        <ListItem button 
+          onClick={() =>{ 
+            history.push('/user/carlosCarsd'),
+            handlerClosedDrawer()
+          }} className={classes.colorTheme}  >
+          
           <ListItemIcon>
             <img src={ProfileIcon} alt='Profiles icon' />
           </ListItemIcon>
@@ -90,7 +117,11 @@ export default function Navbar({window}) {
           />
         </ListItem>
 
-        <ListItem button onClick={() => history.push('/')}>
+        <ListItem button 
+          onClick={() =>{
+            history.push('/')
+            handlerClosedDrawer()
+          }}>
           <ListItemIcon>
             <img src={PanelIcon} alt='Panel icon' />
           </ListItemIcon>
@@ -107,7 +138,22 @@ export default function Navbar({window}) {
 
  
   return (<>
+    <CssBaseline />
+    <AppBar position="fixed" className={classes.appBar}>
+      <Toolbar>
+        <IconButton
+          color="inherit"
+          aria-label="open drawer"
+          edge="start"
+          onClick={handleDrawerToggle}
+          className={classes.menuButton}
+        >
+          <MenuIcon />
 
+        </IconButton>
+      </Toolbar>
+    </AppBar>
+ 
     <nav className={classes.drawer} aria-label="mailbox folders">
       
       <Hidden smUp implementation="css">

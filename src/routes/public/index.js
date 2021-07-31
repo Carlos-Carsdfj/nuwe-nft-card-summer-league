@@ -7,7 +7,9 @@ const useStyles = makeStyles((theme) => ({
   content: {
     minHeight:'100vh',
     flexGrow: 1,
-    padding: theme.spacing(3),
+    [theme.breakpoints.down('sm')]:{
+      marginTop:100
+    }
   },
 })
 )
