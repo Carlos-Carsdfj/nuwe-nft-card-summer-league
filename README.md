@@ -259,9 +259,15 @@ Los Componentes estan todos agrupados en esta carpeta podemos ver los siguientes
   
   
   
- * **User**
-   Contiene las dos vistas la de nft y la normal la que seria el perfil del usuario  en este reto no necesitabamos de este ultimo por lo que solo se coloco un boton para poder cambiar la vista al nft 
-   
+ * **User**:
+   Contiene las dos vistas la de nft y la normal la que seria el perfil del usuario  en este reto no necesitabamos de este ultimo por lo que solo se coloco un  boton para poder cambiar la vista al nft 
+
+
+ * **Nft**:
+    Organiza  y agrupa los componentes  Minicard, QrCard y Card y proporciona el boton para regresar a la vista del perfil 
+    
+ * **Card**:
+    Carta del nft principal contiene informacion del perfil en una comoda vista agrupados y con un avatar , la carta esta envuelta por la **Card** componente dado por  **Material-ui** luego tiene la **ActionCardArea**  que nos da el efecto al presionar para dar el flip a la tarjeta y ver la informacion de la parte trasera con el codigo Qr 
    
    
   
