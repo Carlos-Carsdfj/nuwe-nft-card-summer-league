@@ -1,32 +1,19 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { BrowserRouter as Router } from 'react-router-dom'
-import { Provider } from 'react-redux'
 import { ThemeProvider } from '@material-ui/styles'
-import { createTheme } from '@material-ui/core/styles'
+import { theme  } from 'styles/global'
+import {  Provider } from 'react-redux'
+import  { store } from 'statusManagement/reducer/store'
 import './index.css'
 import App from './App'
-import store from 'statusManagement/reducer/store'
-const theme = createTheme({
-  
-  palette: {
-    primary:  {
-      main: '#29b6f6',
-      light: '#bbdefb'
-    },
-    secondary: {
-      main: '#1976d2',
-    },
-  }
-  
-})
 ReactDOM.render(
   <Router>
-    <Provider store={store}>
-      <ThemeProvider theme={theme}>  
+    <ThemeProvider theme={theme}>  
+      <Provider store={store}>      
         <App />
-      </ThemeProvider>  
-    </Provider>
+      </Provider>
+    </ThemeProvider>  
   </Router>,
   document.getElementById('root'),
 )
